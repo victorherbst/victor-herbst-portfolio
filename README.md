@@ -4,7 +4,7 @@
 
 ![Página inicial do portfólio de Victor Herbst](docs/screenshots/portfolio-home-desktop.jpg)
 
-> Espelho público sanitizado do código de apresentação de [victorherbst.com.br](https://victorherbst.com.br). O site ao vivo continua sendo a referência oficial e mantém seu próprio fluxo de hospedagem.
+> Código público sanitizado do portfólio em produção em [victorherbst.com.br](https://victorherbst.com.br). O repositório contém somente a camada de apresentação e nenhum código privado dos produtos demonstrados.
 
 <p align="center">
   <img src="docs/screenshots/portfolio-home-mobile.jpg" width="250" alt="Portfólio em viewport mobile" />
@@ -33,8 +33,7 @@ Este repositório apresenta a camada pública do portfólio de Victor Herbst: um
 
 - Next.js 16 com App Router
 - React 19 e TypeScript
-- Vinext + Vite
-- Build compatível com Cloudflare Workers
+- Hospedagem e previews pela Vercel
 - CSS autoral, sem biblioteca de componentes
 
 ### Arquitetura
@@ -59,7 +58,7 @@ pnpm lint
 pnpm build
 ```
 
-O arquivo `.openai/hosting.json` deste repositório contém apenas um identificador sentinela local. Ele não está ligado ao projeto hospedado e não deve ser usado para publicar o site oficial.
+O branch `main` alimenta a publicação de produção na Vercel. Pull requests e branches de trabalho recebem previews isoladas antes de qualquer promoção para o domínio oficial.
 
 ### Contribuição e licença
 
@@ -89,8 +88,7 @@ This repository presents the public-facing layer of Victor Herbst's portfolio: a
 
 - Next.js 16 with App Router
 - React 19 and TypeScript
-- Vinext + Vite
-- Cloudflare Workers-compatible build
+- Hosting and previews on Vercel
 - Custom CSS with no component library
 
 ### Architecture
@@ -115,7 +113,7 @@ pnpm lint
 pnpm build
 ```
 
-This repository's `.openai/hosting.json` contains a local-only sentinel identifier. It is not connected to the hosted project and must not be used to publish the official site.
+The `main` branch feeds the production deployment on Vercel. Pull requests and working branches receive isolated previews before any promotion to the official domain.
 
 ### Contributing and license
 

@@ -38,8 +38,8 @@ O repositório contém apenas uma aplicação de apresentação. A rota inicial 
 - No full-length books, résumés or downloadable PDFs.
 - Contact actions route visitors to the official live site instead of embedding private contact details.
 
-The Vinext/Vite configuration remains so contributors can reproduce the same Cloudflare Workers-compatible build shape locally. The public hosting metadata is a non-production sentinel and cannot identify or update the live Sites project.
+The public application uses the native Next.js build. Vercel hosts preview and production deployments from the reviewed GitHub source; no provider credential or production identifier is stored in the repository.
 
 ## Maintenance model
 
-`main` is the canonical reviewed mirror. Updates should be prepared on a short-lived branch, compared against the live portfolio source, passed through the publication checklist, and merged only after lint, build and browser verification succeed.
+`main` is the canonical reviewed production source. Updates should be prepared on a short-lived branch and merged only after lint, build and preview verification succeed.

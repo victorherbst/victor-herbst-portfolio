@@ -32,9 +32,9 @@ The mirror uses a clean repository history rather than importing the hosted proj
 | Résumé/CV PDF | Excluded | Contains unnecessary personal and employment details for this repository |
 | Complete editorial PDFs and preflight certificate | Excluded | Full-length authored works are not needed to demonstrate the site and should not be redistributed from the mirror |
 | Unused screenshots and duplicate image files | Excluded | Reduce surface area and avoid publishing artifacts without a runtime or documentation purpose |
-| `node_modules`, `.next`, `.vinext`, `dist`, Wrangler state | Excluded | Generated content may contain local paths, stale output or deployment state and is reproducible from the lockfile |
+| `node_modules`, `.next` and Vercel state | Excluded | Generated content may contain local paths, stale output or deployment state and is reproducible from the lockfile |
 | Temporary archives and work directories | Excluded | Not source; may carry stale or sensitive material |
-| Live `.openai/hosting.json` project identifier | Replaced | The mirror keeps a local-only sentinel so builds remain reproducible without linking GitHub to the hosted project |
+| Hosting project identifiers | Excluded | Hosting linkage is managed by the provider and never committed as public source |
 | Hosted repository history and remote configuration | Excluded | Prevents accidental disclosure and keeps the GitHub project independent from the live hosting flow |
 | Céu Canto, Myriad and editorial engine implementations | Excluded | The mirror contains only portfolio-facing descriptions and bounded demonstrations, never the product engines themselves |
 
@@ -51,6 +51,6 @@ Before every public update:
 7. Verify `/` and `/sobre` in a browser at desktop and mobile widths.
 8. Review the complete staged diff before pushing.
 
-## Hosting separation
+## Hosting model
 
-This audit authorizes publication of the GitHub mirror only. It does not authorize a Sites deployment, a DNS change, a migration, or any modification to `victorherbst.com.br` or its current hosting workflow.
+The reviewed GitHub source is the canonical source for Vercel previews and production. DNS and provider-side project linkage remain outside the repository.

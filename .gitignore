@@ -10,11 +10,8 @@
 
 # Build, runtime and test output
 /.next/
-/.vinext/
-/dist/
 /out/
 /coverage/
-/.wrangler/
 /.vercel/
 next-env.d.ts
 *.tsbuildinfo
