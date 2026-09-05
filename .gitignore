@@ -55,3 +55,9 @@ Thumbs.db
 *~
 .vercel
 .env*
+
+# Public, reviewed portfolio publications
+!public/editorial/*.pdf
+!public/downloads/*.pdf
+/playwright-report/
+/test-results/

@@ -1,7 +1,7 @@
 {
   "name": "victor-herbst-portfolio",
   "version": "0.1.0",
-  "description": "Public, sanitized source mirror for Victor Herbst's bilingual portfolio.",
+  "description": "Bilingual portfolio of Victor Herbst — independent design and development",
   "private": true,
   "packageManager": "pnpm@11.19.0",
   "license": "UNLICENSED",
@@ -21,19 +21,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ignore-pattern .next"
+    "lint": "eslint . --ignore-pattern .next",
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write app components lib tests"
   },
   "dependencies": {
-    "next": "16.2.6",
+    "next": "16.3.4",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "vexflow": "5.0.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.4",
-    "eslint-config-next": "16.2.6",
+    "eslint-config-next": "16.3.4",
+    "postcss": "8.5.23",
+    "prettier": "3.6.2",
+    "sharp": "0.35.4",
     "typescript": "5.9.3"
   },
   "type": "module"

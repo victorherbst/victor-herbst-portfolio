@@ -1,0 +1,11 @@
+.git
+node_modules
+.next
+test-results
+playwright-report
+scripts
+tests
+AGENTS.md
+CLAUDE.md
+README.md
+.env*

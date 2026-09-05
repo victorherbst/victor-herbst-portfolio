@@ -1,0 +1,130 @@
+{
+  "maia-portrait": {
+    "width": 1122,
+    "height": 1402
+  },
+  "maia-campaign": {
+    "width": 1448,
+    "height": 1086
+  },
+  "maia-kyoto": {
+    "width": 1086,
+    "height": 1448
+  },
+  "maia-food": {
+    "width": 1448,
+    "height": 1086
+  },
+  "maia-shirt": {
+    "width": 1122,
+    "height": 1402
+  },
+  "maia-shirt-detail": {
+    "width": 1122,
+    "height": 1402
+  },
+  "maia-home": {
+    "width": 1440,
+    "height": 1100
+  },
+  "maia-shop": {
+    "width": 1440,
+    "height": 1100
+  },
+  "maia-mobile": {
+    "width": 390,
+    "height": 844
+  },
+  "oficio-home": {
+    "width": 1440,
+    "height": 1080
+  },
+  "oficio-quote": {
+    "width": 1440,
+    "height": 1080
+  },
+  "oficio-client": {
+    "width": 1440,
+    "height": 1080
+  },
+  "oficio-mobile": {
+    "width": 390,
+    "height": 844
+  },
+  "cadencia-home": {
+    "width": 1440,
+    "height": 1000
+  },
+  "cadencia-score": {
+    "width": 1144,
+    "height": 1102
+  },
+  "cadencia-student": {
+    "width": 1440,
+    "height": 1000
+  },
+  "cadencia-admin": {
+    "width": 1440,
+    "height": 1000
+  },
+  "cadencia-mobile": {
+    "width": 390,
+    "height": 940
+  },
+  "avesso-campaign": {
+    "width": 1448,
+    "height": 1086
+  },
+  "lia-box": {
+    "width": 1800,
+    "height": 1350
+  },
+  "lia-brand": {
+    "width": 1800,
+    "height": 1350
+  },
+  "lia-packaging": {
+    "width": 1800,
+    "height": 1350
+  },
+  "lia-social": {
+    "width": 1800,
+    "height": 1350
+  },
+  "nitida-home": {
+    "width": 1800,
+    "height": 1202
+  },
+  "nitida-flow": {
+    "width": 1800,
+    "height": 1202
+  },
+  "ceu-home": {
+    "width": 1800,
+    "height": 1202
+  },
+  "ceu-practice": {
+    "width": 1500,
+    "height": 1000
+  },
+  "ceu-feedback": {
+    "width": 1500,
+    "height": 1000
+  },
+  "victor": {
+    "width": 1061,
+    "height": 1483
+  },
+  "avesso-home": {
+    "width": 1440,
+    "height": 1000
+  },
+  "avesso-product": {
+    "width": 1440,
+    "height": 1000
+  },
+  "nitida-eye": {
+    "width": 1536,
+    "height": 1024
+  }
+}

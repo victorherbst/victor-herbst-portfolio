@@ -12,7 +12,10 @@ export default function TechnicalSignature({
   className?: string;
 }) {
   return (
-    <aside className={`technical-signature technical-signature-${tone} ${className}`.trim()} aria-label={label}>
+    <aside
+      className={`technical-signature technical-signature-${tone} ${className}`.trim()}
+      aria-label={label}
+    >
       <strong>{label}</strong>
       <dl>
         {items.map(([term, value]) => (

@@ -35,7 +35,12 @@ const copy = {
     intro:
       "Uma semente imutável ancora todas as versões. Transformações especializadas podem estruturar, desenvolver, lapidar ou ficcionalizar o texto dentro de limites explícitos. O histórico permanece íntegro e o autor conserva controle sobre a obra.",
     techLabel: "Arquitetura verificável",
-    stack: [["Núcleo", "TypeScript · Node.js"], ["Modelos", "Anthropic API · contratos por medida"], ["Integridade", "SHA-256 · operações tipadas"], ["Histórico", "JSONL append-only · node:test"]],
+    stack: [
+      ["Núcleo", "TypeScript · Node.js"],
+      ["Modelos", "Anthropic API · contratos por medida"],
+      ["Integridade", "SHA-256 · operações tipadas"],
+      ["Histórico", "JSONL append-only · node:test"],
+    ],
     tabs: {
       rebuild: "Reconstrução",
       violations: "Violações",
@@ -66,7 +71,8 @@ const copy = {
         {
           short: "Certeza",
           axis: "MODALIDADE",
-          source: "A gente se mudou pra Vila Sereno acho que em oitenta e três, oitenta e quatro, por aí.",
+          source:
+            "A gente se mudou pra Vila Sereno acho que em oitenta e três, oitenta e quatro, por aí.",
           candidate: "Mudamo-nos para Vila Sereno em 1983.",
           reason: "A transformação crava uma data que a fonte manteve incerta.",
         },
@@ -75,7 +81,8 @@ const copy = {
           axis: "RELAÇÃO CAUSAL",
           source: "O rio encheu. Nesse mesmo ano eu larguei da cachaça.",
           candidate: "A enchente me fez largar a cachaça.",
-          reason: "Dois fatos próximos no tempo foram soldados por uma causa não declarada.",
+          reason:
+            "Dois fatos próximos no tempo foram soldados por uma causa não declarada.",
         },
         {
           short: "Interioridade",
@@ -85,7 +92,8 @@ const copy = {
           reason: "A frase atribui uma emoção que a fonte nunca nomeou.",
         },
       ],
-      mutationNote: "Teste adversarial: 7 de 9 mutações detectadas. As 2 lacunas estruturais permanecem documentadas.",
+      mutationNote:
+        "Teste adversarial: 7 de 9 mutações detectadas. As 2 lacunas estruturais permanecem documentadas.",
     },
     measures: {
       label: "PODER 03 / TETO CRIATIVO",
@@ -96,39 +104,84 @@ const copy = {
           index: "M1",
           title: "Registro documental",
           mode: "teto: elaboração retórica",
-          permissions: ["fatos: somente fonte", "emoções: somente fonte", "causalidade: somente fonte"],
-          sample: "Nós era em nove dentro de casa, mais os cachorro, mais uma tia que aparecia e sumia quando dava na telha dela.",
+          permissions: [
+            "fatos: somente fonte",
+            "emoções: somente fonte",
+            "causalidade: somente fonte",
+          ],
+          sample:
+            "Nós era em nove dentro de casa, mais os cachorro, mais uma tia que aparecia e sumia quando dava na telha dela.",
         },
         {
           index: "M2",
           title: "Ficção especulativa",
           mode: "teto: invenção aberta",
-          permissions: ["mundo: inventar", "personagens: inventar", "causalidade: inventar"],
-          sample: "No Beco do Sabiá, ninguém chorava perto de vasilha vazia. Essa era a lei da casa, mais velha que a avó, mais velha que o mangue.",
+          permissions: [
+            "mundo: inventar",
+            "personagens: inventar",
+            "causalidade: inventar",
+          ],
+          sample:
+            "No Beco do Sabiá, ninguém chorava perto de vasilha vazia. Essa era a lei da casa, mais velha que a avó, mais velha que o mangue.",
         },
       ],
-      receipt: "Piloto pareado: 14 gerações · 42 julgamentos · adjudicação humana 14/14",
+      receipt:
+        "Piloto pareado: 14 gerações · 42 julgamentos · adjudicação humana 14/14",
     },
     authorship: {
       label: "PODER 04 / SOBERANIA DO AUTOR",
       title: "A máquina propõe. O histórico não apaga a decisão humana.",
       note: "Aceitar, editar, remover, desfazer e escrever diretamente são eventos novos. Desfazer não apaga o passado: acrescenta uma nova linha de linhagem.",
       flow: [
-        ["01", "Semente imutável", "Fonte e contrato recebem identidade por conteúdo."],
-        ["02", "Transformação", "A proposta chega separada do material autoral."],
-        ["03", "Decisão do autor", "Aceite, edição ou recusa ficam registrados."],
-        ["04", "Versão autorada", "O estado atual é reconstruído pelo histórico."],
+        [
+          "01",
+          "Semente imutável",
+          "Fonte e contrato recebem identidade por conteúdo.",
+        ],
+        [
+          "02",
+          "Transformação",
+          "A proposta chega separada do material autoral.",
+        ],
+        [
+          "03",
+          "Decisão do autor",
+          "Aceite, edição ou recusa ficam registrados.",
+        ],
+        [
+          "04",
+          "Versão autorada",
+          "O estado atual é reconstruído pelo histórico.",
+        ],
       ],
       limitationLabel: "FRONTEIRA CONHECIDA",
-      limitation: "Depois da escrita direta do autor, a linhagem do evento existe, mas a proveniência por trecho do texto final ainda precisa de uma ontologia própria.",
+      limitation:
+        "Depois da escrita direta do autor, a linhagem do evento existe, mas a proveniência por trecho do texto final ainda precisa de uma ontologia própria.",
     },
     principles: [
-      ["01", "Semente imutável", "A origem permanece recuperável em todas as versões."],
-      ["02", "Transformações especializadas", "Cada tarefa opera sob permissões próprias."],
-      ["03", "Registro verificável", "Hashes, recibos e decisões preservam a linhagem."],
-      ["04", "Soberania do autor", "A máquina nunca converte proposta em autoria por decreto."],
+      [
+        "01",
+        "Semente imutável",
+        "A origem permanece recuperável em todas as versões.",
+      ],
+      [
+        "02",
+        "Transformações especializadas",
+        "Cada tarefa opera sob permissões próprias.",
+      ],
+      [
+        "03",
+        "Registro verificável",
+        "Hashes, recibos e decisões preservam a linhagem.",
+      ],
+      [
+        "04",
+        "Soberania do autor",
+        "A máquina nunca converte proposta em autoria por decreto.",
+      ],
     ],
-    proof: "140 execuções instrumentadas · 127 saídas contratuais · testes adversariais",
+    proof:
+      "140 execuções instrumentadas · 127 saídas contratuais · testes adversariais",
     caveat:
       "Garantias determinísticas cobrem integridade, reconstrução, identidade e linhagem. A fiscalização semântica é probabilística e exige revisão humana em decisões editoriais.",
   },
@@ -138,7 +191,12 @@ const copy = {
     intro:
       "An immutable seed anchors every version. Specialized transformations can structure, develop, polish or fictionalize text within explicit boundaries. History stays intact and the author remains in control of the work.",
     techLabel: "Verifiable architecture",
-    stack: [["Core", "TypeScript · Node.js"], ["Models", "Anthropic API · measure contracts"], ["Integrity", "SHA-256 · typed operations"], ["History", "Append-only JSONL · node:test"]],
+    stack: [
+      ["Core", "TypeScript · Node.js"],
+      ["Models", "Anthropic API · measure contracts"],
+      ["Integrity", "SHA-256 · typed operations"],
+      ["History", "Append-only JSONL · node:test"],
+    ],
     tabs: {
       rebuild: "Reconstruction",
       violations: "Violations",
@@ -169,26 +227,31 @@ const copy = {
         {
           short: "Certainty",
           axis: "MODALITY",
-          source: "We moved to Vila Sereno, I think in eighty-three, eighty-four, around then.",
+          source:
+            "We moved to Vila Sereno, I think in eighty-three, eighty-four, around then.",
           candidate: "We moved to Vila Sereno in 1983.",
-          reason: "The transformation fixes a date that the source deliberately left uncertain.",
+          reason:
+            "The transformation fixes a date that the source deliberately left uncertain.",
         },
         {
           short: "Cause",
           axis: "CAUSAL RELATION",
           source: "The river flooded. That same year I quit drinking.",
           candidate: "The flood made me quit drinking.",
-          reason: "Two facts close in time were joined by a causal link the source never stated.",
+          reason:
+            "Two facts close in time were joined by a causal link the source never stated.",
         },
         {
           short: "Interiority",
           axis: "THIRD-PARTY STATE",
           source: "Neide wiped the counter and then stood still there.",
-          candidate: "Neide stood paralyzed by sadness in front of the counter.",
+          candidate:
+            "Neide stood paralyzed by sadness in front of the counter.",
           reason: "The sentence attributes an emotion the source never named.",
         },
       ],
-      mutationNote: "Adversarial test: 7 of 9 mutations detected. The 2 structural gaps remain documented.",
+      mutationNote:
+        "Adversarial test: 7 of 9 mutations detected. The 2 structural gaps remain documented.",
     },
     measures: {
       label: "POWER 03 / CREATIVE CEILING",
@@ -199,39 +262,80 @@ const copy = {
           index: "M1",
           title: "Documentary record",
           mode: "ceiling: rhetorical elaboration",
-          permissions: ["facts: source only", "emotions: source only", "causality: source only"],
-          sample: "There were nine of us in the house, plus the dogs, plus an aunt who came and went whenever she felt like it.",
+          permissions: [
+            "facts: source only",
+            "emotions: source only",
+            "causality: source only",
+          ],
+          sample:
+            "There were nine of us in the house, plus the dogs, plus an aunt who came and went whenever she felt like it.",
         },
         {
           index: "M2",
           title: "Speculative fiction",
           mode: "ceiling: open invention",
-          permissions: ["world: invent", "characters: invent", "causality: invent"],
-          sample: "In Beco do Sabiá, nobody cried near an empty vessel. That was the law of the house, older than the grandmother, older than the mangrove.",
+          permissions: [
+            "world: invent",
+            "characters: invent",
+            "causality: invent",
+          ],
+          sample:
+            "In Beco do Sabiá, nobody cried near an empty vessel. That was the law of the house, older than the grandmother, older than the mangrove.",
         },
       ],
-      receipt: "Paired pilot: 14 generations · 42 judgments · 14/14 human adjudication",
+      receipt:
+        "Paired pilot: 14 generations · 42 judgments · 14/14 human adjudication",
     },
     authorship: {
       label: "POWER 04 / AUTHOR SOVEREIGNTY",
       title: "The machine proposes. History does not erase human choice.",
       note: "Accepting, editing, removing, undoing and writing directly are new events. Undo never erases the past: it adds another line to the lineage.",
       flow: [
-        ["01", "Immutable seed", "Source and contract receive content identities."],
-        ["02", "Transformation", "The proposal stays separate from authored material."],
-        ["03", "Author decision", "Acceptance, editing or rejection is recorded."],
+        [
+          "01",
+          "Immutable seed",
+          "Source and contract receive content identities.",
+        ],
+        [
+          "02",
+          "Transformation",
+          "The proposal stays separate from authored material.",
+        ],
+        [
+          "03",
+          "Author decision",
+          "Acceptance, editing or rejection is recorded.",
+        ],
         ["04", "Authored version", "Current state is rebuilt from history."],
       ],
       limitationLabel: "KNOWN FRONTIER",
-      limitation: "After direct author writing, event lineage exists, but span-level provenance in the final text still needs its own ontology.",
+      limitation:
+        "After direct author writing, event lineage exists, but span-level provenance in the final text still needs its own ontology.",
     },
     principles: [
-      ["01", "Immutable seed", "Origin remains recoverable across every version."],
-      ["02", "Specialized transformations", "Each task operates under its own permissions."],
-      ["03", "Verifiable record", "Hashes, receipts and decisions preserve lineage."],
-      ["04", "Author sovereignty", "The machine never turns a proposal into authorship by decree."],
+      [
+        "01",
+        "Immutable seed",
+        "Origin remains recoverable across every version.",
+      ],
+      [
+        "02",
+        "Specialized transformations",
+        "Each task operates under its own permissions.",
+      ],
+      [
+        "03",
+        "Verifiable record",
+        "Hashes, receipts and decisions preserve lineage.",
+      ],
+      [
+        "04",
+        "Author sovereignty",
+        "The machine never turns a proposal into authorship by decree.",
+      ],
     ],
-    proof: "140 instrumented runs · 127 contractual outputs · adversarial tests",
+    proof:
+      "140 instrumented runs · 127 contractual outputs · adversarial tests",
     caveat:
       "Deterministic guarantees cover integrity, reconstruction, identity and lineage. Semantic review is probabilistic and requires human review for editorial decisions.",
   },
@@ -244,7 +348,11 @@ export default function FidelityEngine({ language }: { language: Language }) {
   const violation = t.violations.cases[violationIndex];
 
   return (
-    <section className="fidelity" id="fidelity-engine" aria-labelledby="fidelity-title">
+    <section
+      className="fidelity"
+      id="fidelity-engine"
+      aria-labelledby="fidelity-title"
+    >
       <div className="fidelity-inner shell">
         <header className="fidelity-heading">
           <div>
@@ -254,7 +362,11 @@ export default function FidelityEngine({ language }: { language: Language }) {
           <h2 id="fidelity-title">{t.title}</h2>
         </header>
 
-        <TechnicalSignature label={t.techLabel} items={t.stack} className="fidelity-technical-signature" />
+        <TechnicalSignature
+          label={t.techLabel}
+          items={t.stack}
+          className="fidelity-technical-signature"
+        />
 
         <div className="fidelity-console">
           <nav className="fidelity-tabs" aria-label={t.eyebrow}>
@@ -279,9 +391,14 @@ export default function FidelityEngine({ language }: { language: Language }) {
                   <span>{t.rebuild.label}</span>
                   <h3>{t.rebuild.title}</h3>
                   <p>{t.rebuild.note}</p>
-                  <div className="fidelity-legend" aria-label="Provenance legend">
+                  <div
+                    className="fidelity-legend"
+                    aria-label="Provenance legend"
+                  >
                     {t.rebuild.legend.map(([kind, label]) => (
-                      <span key={kind} data-kind={kind}>{label}</span>
+                      <span key={kind} data-kind={kind}>
+                        {label}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -294,13 +411,18 @@ export default function FidelityEngine({ language }: { language: Language }) {
                     <span>{t.rebuild.resultLabel}</span>
                     <p className="fidelity-prose">
                       {reconstructedSegments.map((segment, index) => (
-                        <mark data-kind={segment.kind} key={`${segment.kind}-${index}`}>
+                        <mark
+                          data-kind={segment.kind}
+                          key={`${segment.kind}-${index}`}
+                        >
                           {segment.text}
                         </mark>
                       ))}
                     </p>
                   </div>
-                  <strong className="fidelity-checksum">{t.rebuild.checksum}</strong>
+                  <strong className="fidelity-checksum">
+                    {t.rebuild.checksum}
+                  </strong>
                 </div>
               </div>
             ) : null}
@@ -322,7 +444,8 @@ export default function FidelityEngine({ language }: { language: Language }) {
                         aria-pressed={violationIndex === index}
                         onClick={() => setViolationIndex(index)}
                       >
-                        <span>0{index + 1}</span>{item.short}
+                        <span>0{index + 1}</span>
+                        {item.short}
                       </button>
                     ))}
                   </div>
@@ -341,7 +464,9 @@ export default function FidelityEngine({ language }: { language: Language }) {
                     <strong>{violation.axis}</strong>
                     <p>{violation.reason}</p>
                   </div>
-                  <p className="fidelity-mutation-note">{t.violations.mutationNote}</p>
+                  <p className="fidelity-mutation-note">
+                    {t.violations.mutationNote}
+                  </p>
                 </div>
               </div>
             ) : null}
@@ -361,7 +486,9 @@ export default function FidelityEngine({ language }: { language: Language }) {
                         <h4>{measure.title}</h4>
                         <strong>{measure.mode}</strong>
                         <ul>
-                          {measure.permissions.map((permission) => <li key={permission}>{permission}</li>)}
+                          {measure.permissions.map((permission) => (
+                            <li key={permission}>{permission}</li>
+                          ))}
                         </ul>
                         <blockquote>{measure.sample}</blockquote>
                       </article>
@@ -384,7 +511,10 @@ export default function FidelityEngine({ language }: { language: Language }) {
                     {t.authorship.flow.map(([number, title, text]) => (
                       <li key={number}>
                         <span>{number}</span>
-                        <div><strong>{title}</strong><p>{text}</p></div>
+                        <div>
+                          <strong>{title}</strong>
+                          <p>{text}</p>
+                        </div>
                       </li>
                     ))}
                   </ol>

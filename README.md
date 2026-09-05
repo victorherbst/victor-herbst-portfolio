@@ -1,126 +1,60 @@
-# Victor Herbst — Portfolio
+# Victor Herbst — portfólio
 
-[Português](#português) · [English](#english) · [Site ao vivo / Live site](https://victorherbst.com.br)
+Portfólio bilíngue em Next.js: identidade, direção de arte, websites e produtos digitais.
 
-![Página inicial do portfólio de Victor Herbst](docs/screenshots/portfolio-home-desktop.jpg)
+Produção: https://victorherbst.com.br
 
-> Código público sanitizado do portfólio em produção em [victorherbst.com.br](https://victorherbst.com.br). O repositório contém somente a camada de apresentação e nenhum código privado dos produtos demonstrados.
+## Desenvolvimento
 
-<p align="center">
-  <img src="docs/screenshots/portfolio-home-mobile.jpg" width="250" alt="Portfólio em viewport mobile" />
-  <img src="docs/screenshots/guided-learning-mobile.jpg" width="250" alt="Microdemonstração guiada em viewport mobile" />
-</p>
-
-![Perfil público de Victor Herbst](docs/screenshots/portfolio-about-desktop.jpg)
-
-<a id="português"></a>
-
-## Português
-
-Este repositório apresenta a camada pública do portfólio de Victor Herbst: uma experiência bilíngue sobre educação, linguagem, sistemas editoriais e tecnologia aplicada. Ele foi preparado como vitrine técnica e não contém o histórico privado do projeto hospedado, credenciais, currículos, documentos completos nem o código-fonte dos produtos descritos nos cases.
-
-### Cases em destaque
-
-| Case | O que a vitrine demonstra | Limite público |
-| --- | --- | --- |
-| Céu Canto | Produto educacional responsivo, prática contextual, revisão e leitura | Screenshots e componentes de apresentação; sem aplicação, banco, autenticação ou lógica de produção |
-| Visita guiada | Uma microexperiência de aprendizagem em quatro cenas | Demonstração autocontida e ilustrativa |
-| Motores visuais | Movimento autoral, cor OKLCH e atmosferas adaptativas | Amostras delimitadas; sem forjas, pipelines ou runtimes proprietários |
-| Livro Pronto | Arquitetura editorial, paginação e preflight | Imagens selecionadas; sem motor, fontes de livros ou PDFs completos |
-| Myriad | Proveniência, contratos de transformação e autoria | Visualização de interface; sem orquestração, prompts, modelos ou implementação do motor |
-
-### Stack
-
-- Next.js 16 com App Router
-- React 19 e TypeScript
-- Hospedagem e previews pela Vercel
-- CSS autoral, sem biblioteca de componentes
-
-### Arquitetura
-
-O espelho é intencionalmente autocontido: rotas e componentes React renderizam conteúdo editorial, pequenos datasets demonstrativos e imagens públicas. Não há banco, API privada, autenticação, analytics, pagamentos ou acesso a serviços de produção.
-
-Leia [Arquitetura](docs/ARCHITECTURE.md) e [Auditoria de publicação](docs/PUBLICATION-AUDIT.md) para conhecer as fronteiras técnicas e as decisões de segurança.
-
-### Executar localmente
-
-Requisitos: Node.js 22.13 ou superior e pnpm 11.
-
-```bash
+```sh
 pnpm install --frozen-lockfile
-pnpm dev
+pnpm dev --port 3008
 ```
 
-Abra `http://localhost:3000`. Para verificar a versão de produção:
-
-```bash
+```sh
 pnpm lint
+pnpm exec tsc --noEmit
+pnpm exec playwright test
 pnpm build
 ```
 
-O branch `main` alimenta a publicação de produção na Vercel. Pull requests e branches de trabalho recebem previews isoladas antes de qualquer promoção para o domínio oficial.
+Os testes usam Google Chrome headless. `PORTFOLIO_URL` permite testar outra URL. A aplicação não precisa de banco, credenciais ou variáveis de ambiente para executar.
 
-### Contribuição e licença
+## Conteúdo
 
-O branch `main` representa o snapshot público revisado. Mudanças devem partir de branches curtos e passar pelas verificações descritas em [CONTRIBUTING.md](CONTRIBUTING.md).
+- `lib/projects.ts`: os sete cases, textos PT/EN, imagens e estados reais de cada projeto.
+- `lib/site.ts`: contato, rotas e metadados.
+- `components/Home.tsx`: curadoria da página inicial.
+- `components/demos/`: loja, orçamento e trecho musical independentes.
+- `components/Lab.tsx`: visita pedagógica, Myriad e publicações PDF.
+- `public/work/`: imagens selecionadas e otimizadas dos projetos.
+- `public/brand/`: marcas originais usadas nas composições.
+- `public/fonts/`: fontes locais e licenças.
+- `public/editorial/`, `public/downloads/`: PDFs públicos revisados.
 
-Este é um repositório source-available para avaliação profissional, não um projeto open source. Código, textos, marcas e imagens permanecem sob direitos reservados; consulte [LICENSE](LICENSE).
+PT e EN têm URLs, atributos de idioma, metadados e alternates próprios. Trocar o idioma preserva o case em navegação. Os cases são gerados estaticamente.
 
----
+## Limites das demonstrações
 
-<a id="english"></a>
+A loja salva apenas tamanhos e quantidades na chave local `vh:maia-bag:v1`. A finalização não cobra, não solicita dados pessoais e não envia pedidos. Os preços e estoques são fictícios.
 
-## English
+O orçamento mantém seu estado na sessão da interface. A aprovação não envia mensagens nem toca no projeto OFÍCIO original.
 
-This repository presents the public-facing layer of Victor Herbst's portfolio: a bilingual experience spanning education, language, editorial systems and applied technology. It is a technical showcase, not a copy of the hosted project's private history. It contains no credentials, résumés, full publications or source code for the products described in the case studies.
+A partitura e o som sintetizado usam quatro compassos do estudo original **Primeiro respiro**, do projeto CADÊNCIA, CC BY 4.0. VexFlow e fontes musicais só são usados ao abrir o trecho. Áudio depende de ação explícita e para quando a página fica oculta ou o componente é desmontado. Os backends completos de CADÊNCIA e OFÍCIO permanecem em ambiente local.
 
-### Featured case studies
+O formulário de contato prepara uma mensagem e oferece um link para o WhatsApp. O visitante revisa e confirma o envio no próprio WhatsApp; o formulário não transmite nem armazena os campos.
 
-| Case study | What the showcase demonstrates | Public boundary |
-| --- | --- | --- |
-| Céu Canto | Responsive learning product, contextual practice, review and reading | Screenshots and presentation components only; no application, database, authentication or production logic |
-| Guided visit | A four-scene learning micro-experience | Self-contained illustrative demo |
-| Visual engines | Authored motion, OKLCH color and adaptive atmospheres | Bounded samples; no proprietary forges, pipelines or runtimes |
-| Livro Pronto | Editorial architecture, pagination and preflight | Selected images; no engine, book sources or complete PDFs |
-| Myriad | Provenance, transformation contracts and authorship | Interface visualization; no orchestration, prompts, models or engine implementation |
+## Publicação
 
-### Stack
+Projeto Vercel existente: `vashe/victor-herbst-portfolio`.
 
-- Next.js 16 with App Router
-- React 19 and TypeScript
-- Hosting and previews on Vercel
-- Custom CSS with no component library
-
-### Architecture
-
-The mirror is intentionally self-contained: React routes and components render editorial copy, small demonstrative datasets and public images. It has no database, private API, authentication, analytics, payments or access to production services.
-
-See [Architecture](docs/ARCHITECTURE.md) and [Publication audit](docs/PUBLICATION-AUDIT.md) for the technical boundaries and security decisions.
-
-### Run locally
-
-Requirements: Node.js 22.13 or newer and pnpm 11.
-
-```bash
-pnpm install --frozen-lockfile
-pnpm dev
+```sh
+vercel link --project victor-herbst-portfolio --scope vashe
+vercel deploy
+# Depois de validar a implantação:
+vercel deploy --prod
 ```
 
-Open `http://localhost:3000`. To verify the production build:
+A pasta `.vercel`, arquivos de ambiente e resultados de teste não são versionados. Não adicionar credenciais, dados de contas, arquivos privados das outras aplicações ou conteúdo de clientes.
 
-```bash
-pnpm lint
-pnpm build
-```
-
-The `main` branch feeds the production deployment on Vercel. Pull requests and working branches receive isolated previews before any promotion to the official domain.
-
-### Contributing and license
-
-The `main` branch is the reviewed public snapshot. Changes should use short-lived branches and pass the checks in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-This is source-available for professional evaluation, not an open-source project. Code, writing, brands and images remain all rights reserved; see [LICENSE](LICENSE).
-
----
-
-[victorherbst.com.br](https://victorherbst.com.br) · [LinkedIn](https://www.linkedin.com/in/victor-herbst-772362248/)
+Os conceitos de portfólio são identificados no site. Céu Canto é produto autoral; suas imagens distinguem o produto público dos protótipos locais. A participação em pesquisa é descrita separadamente, na página sobre.
