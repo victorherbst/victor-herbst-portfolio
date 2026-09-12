@@ -38,13 +38,13 @@ export default function Home({ lang }: { lang: Lang }) {
               )}
             </p>
             <Link href={p.work} className="text-link">
-              {tr(lang, "Todos os projetos", "All projects")} (07){" "}
+              {tr(lang, "Todos os projetos", "All projects")} ({String(projects.length).padStart(2,"0")}){" "}
               <Arrow diagonal />
             </Link>
           </div>
         </div>
         <div className="selected-grid">
-          {[projects[0], projects[1], projects[2], projects[3]].map(
+          {["rasante","cadencia","forno-da-lia","oficio","maia-ventura","ceu-canto"].map(slug=>projects.find(p=>p.slug===slug)!).map(
             (project, i) => (
               <article
                 className={`project-tile tile-${i}`}

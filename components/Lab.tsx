@@ -131,7 +131,7 @@ export default function Lab({ lang }: { lang: Lang }) {
             <p className="lab-disclaimer shell">
               {tr(
                 lang,
-                "Demonstração explicativa com exemplos preparados. Nenhuma chamada a modelos de IA é feita nesta página.",
+                "Demonstração explicativa com exemplos preparados.",
                 "An explanatory demonstration with prepared examples. This page makes no calls to AI models.",
               )}
             </p>

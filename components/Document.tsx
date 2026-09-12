@@ -45,6 +45,7 @@ export default function Document({
   return (
     <html
       lang={lang === "pt" ? "pt-BR" : "en"}
+      data-scroll-behavior="smooth"
       className={`${display.variable} ${body.variable}`}
     >
       <body id="top">

@@ -2,7 +2,12 @@
 import { useState } from "react";
 import { contacts, Lang, tr } from "@/lib/site";
 import { Arrow } from "./Chrome";
+import {useReferences} from "@/lib/references";
+import {projects} from "@/lib/projects";
+import {ReferenceSelection} from "./ReferencePicker";
 export default function Contact({ lang }: { lang: Lang }) {
+  const {refs}=useReferences();
+  const referenceText=refs.filter(r=>projects.some(p=>p.slug===r.slug)).map(r=>`${projects.find(p=>p.slug===r.slug)?.name} — ${lang==='pt'?r.focus:({'Composição':'Composition','Tipografia':'Typography','Imagem e direção de arte':'Imagery and art direction','Navegação e interação':'Navigation and interaction'}[r.focus]||r.focus)}`).join("; ");
   const [service, setService] = useState("");
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -12,7 +17,7 @@ export default function Contact({ lang }: { lang: Lang }) {
     lang,
     `Oi, Victor! Sou ${name.trim()}. Quero conversar sobre ${service.toLowerCase()}.\n\n${message.trim()}`,
     `Hi Victor! I’m ${name.trim()}. I’d like to discuss ${service.toLowerCase()}.\n\n${message.trim()}`,
-  );
+  ) + (referenceText ? tr(lang, `\n\nReferências que gostei: ${referenceText}.`, `\n\nReferences I liked: ${referenceText}.`) : "");
   const options =
     lang === "pt"
       ? [
@@ -67,6 +72,7 @@ export default function Contact({ lang }: { lang: Lang }) {
             setReady(true);
           }}
         >
+          <ReferenceSelection lang={lang} onChange={edit}/>
           <fieldset>
             <legend>
               {tr(lang, "O que vamos criar?", "What are we creating?")}

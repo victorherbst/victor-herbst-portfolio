@@ -3,6 +3,7 @@ import { Project, projects, text } from "@/lib/projects";
 import { Lang, paths, tr } from "@/lib/site";
 import { WorkImage } from "./ProjectArt";
 import { Arrow } from "./Chrome";
+import {ReferenceButton} from "./ReferencePicker";
 export default function CasePage({
   project: p,
   lang,
@@ -15,7 +16,7 @@ export default function CasePage({
       (projects.findIndex((i) => i.slug === p.slug) + 1) % projects.length
     ];
   return (
-    <main id="main" className="case-page">
+    <main id="main" className={`case-page case-${p.slug} composition-${p.composition}`} style={{"--case-color":p.color,"--case-ink":p.ink} as React.CSSProperties}>
       <header className="case-header shell">
         <Link className="back-link" href={paths(lang).work}>
           ← {tr(lang, "Todos os projetos", "All projects")}
@@ -48,6 +49,7 @@ export default function CasePage({
             <p>{text(p.status, lang)}</p>
           </div>
           <div className="case-actions">
+            <ReferenceButton slug={p.slug} lang={lang}/>
             {p.demo && (
               <Link
                 className="button primary"
@@ -138,12 +140,13 @@ export default function CasePage({
         ))}
       </section>
       <div className="case-footnote shell">
+        {p.concept&&<details><summary>{tr(lang,"Créditos de imagem","Image credits")}</summary><p>{tr(lang,"Fotografias conceituais geradas por IA, com direção e revisão de Victor Herbst. As telas mostram o projeto implementado.","Concept photography generated with AI, directed and reviewed by Victor Herbst. Screens show the implemented project.")}</p></details>}
         <p>
           {p.concept
             ? tr(
                 lang,
-                "Projeto fictício criado para portfólio. Marcas, pessoas e operações retratadas são conceituais. Imagens geradas com IA sob direção de arte autoral.",
-                "Fictional portfolio project. Depicted brands, people and operations are concepts. AI-generated images under original art direction.",
+                "Projeto fictício criado para portfólio. Marcas, pessoas e operações retratadas são conceituais. Imagens ilustrativas.",
+                "Fictional portfolio project. Depicted brands, people and operations are concepts. Illustrative imagery.",
               )
             : tr(
                 lang,

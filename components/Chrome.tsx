@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { contacts, Lang, paths, tr } from "@/lib/site";
+import { projects } from "@/lib/projects";
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
@@ -83,7 +84,7 @@ export function Header({ lang }: { lang: Lang }) {
             aria-current={route.startsWith(p.work) ? "page" : undefined}
           >
             {tr(lang, "Projetos", "Work")}
-            <span>07</span>
+            <span>{String(projects.length).padStart(2,"0")}</span>
           </Link>
           <Link onClick={() => setOpen(false)} href={`${p.home}#experiencias`}>
             {tr(lang, "Experimente", "Try it")}

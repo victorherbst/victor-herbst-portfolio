@@ -3,6 +3,7 @@ export type Category = "all" | "brand" | "web" | "product";
 type Text = [string, string];
 export type Project = {
   slug: string;
+  composition: "editorial" | "graphic" | "workbench" | "operations" | "craft" | "commerce";
   name: string;
   category: Category[];
   type: Text;
@@ -26,7 +27,29 @@ export type Project = {
 export const text = (copy: Text, lang: Lang) => copy[lang === "pt" ? 0 : 1];
 export const projects: Project[] = [
   {
+    slug: "rasante", name: "RASANTE", composition: "graphic", category: ["brand", "web"],
+    type: ["Identidade cultural · Programação", "Cultural identity · Programme"],
+    headline: ["Um cartaz que vira encontro.", "A poster becomes a meeting place."],
+    intro: ["Cinema e artes visuais ganham uma identidade de rua. A programação deixa a pessoa montar o próprio festival, com escolhas que continuam salvas depois da visita.", "Cinema and visual arts find a street-level identity. The programme lets visitors assemble their own festival, keeping their choices after the visit."],
+    role: ["Conceito, identidade, tipografia, direção de arte e desenvolvimento", "Concept, identity, typography, art direction and development"],
+    cover: "rasante-home", color: "#b80030", ink: "#e6e2eb", concept: true,
+    status: ["Festival fictício · roteiro persistente · reserva simulada", "Fictional festival · persistent itinerary · simulated booking"],
+    challenge: ["A energia de um cartaz precisa continuar na tela sem atrapalhar quem procura um filme, um horário ou um espaço.", "The energy of a poster needs to carry onto the screen without getting in the way of finding a film, a time or a venue."],
+    decision: ["Letras recortadas, uma serifada de leitura e mudanças de escala criam duas vozes. A programação usa uma linha por atividade; o roteiro identifica sobreposições antes da reserva demonstrativa.", "Cut stencil letters, a reading serif and shifts in scale create two voices. The programme uses one row per activity; the itinerary identifies overlaps before a demonstration booking."],
+    result: ["Doze atividades em três dias, filtros por espaço e formato, páginas de atividade, roteiro salvo no navegador e resolução de conflitos. Identidade vetorial, cartazes, sinalização e ingresso ilustrativo completam o sistema.", "Twelve activities over three days, venue and format filters, activity pages, a browser-saved itinerary and conflict resolution. Vector identity, posters, signage and an illustrative ticket complete the system."],
+    tags: ["Identidade", "Tipografia", "Programação", "UX/UI"],
+    images: [
+      {src:"rasante-home",caption:["Uma abertura de cartaz: a tipografia desenha a composição.","A poster opening: typography draws the composition."],layout:"wide"},
+      {src:"rasante-program",caption:["A programação transforma expressão em escolhas legíveis.","The programme turns expression into readable choices."],layout:"wide"},
+      {src:"rasante-detail",caption:["Cada história tem contexto, horário e um próximo passo.","Every story has context, a time and a next step."],layout:"wide"},
+      {src:"rasante-mobile",caption:["A agenda se reorganiza para leitura e toque no celular.","The programme adapts to reading and touch on mobile."],layout:"portrait"},
+      {src:"rasante-route",caption:["Escolhas persistentes e uma reserva explicitamente demonstrativa.","Persistent choices and an explicitly simulated booking."],layout:"wide"}
+    ]
+  },
+
+  {
     slug: "maia-ventura",
+    composition: "editorial",
     name: "MAIA VENTURA",
     category: ["brand", "web"],
     type: [
@@ -103,6 +126,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ceu-canto",
+    composition: "workbench",
     name: "Céu Canto",
     category: ["product", "web"],
     type: ["Produto autoral · Educação", "Independent product · Education"],
@@ -169,6 +193,7 @@ export const projects: Project[] = [
   },
   {
     slug: "oficio",
+    composition: "operations",
     name: "OFÍCIO",
     category: ["product"],
     type: [
@@ -187,7 +212,7 @@ export const projects: Project[] = [
       "Marca, arquitetura de produto, UX/UI e aplicação full-stack",
       "Brand, product architecture, UX/UI and full-stack application",
     ],
-    cover: "oficio-home",
+    cover: "oficio-operation-new",
     color: "#e5e8dc",
     ink: "#463b2d",
     concept: true,
@@ -211,7 +236,7 @@ export const projects: Project[] = [
     demo: "quote",
     images: [
       {
-        src: "oficio-home",
+        src: "oficio-operation-new",
         caption: [
           "A oficina: prioridades, próximos passos e entregas.",
           "The workshop: priorities, next actions and deliveries.",
@@ -227,7 +252,7 @@ export const projects: Project[] = [
         layout: "wide",
       },
       {
-        src: "oficio-client",
+        src: "oficio-client-new",
         caption: [
           "O cliente: uma proposta legível, com escopo e aprovação.",
           "The client: a readable proposal with scope and approval.",
@@ -238,6 +263,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cadencia",
+    composition: "workbench",
     name: "CADÊNCIA",
     category: ["product", "web"],
     type: ["Plataforma · Educação musical", "Platform · Music education"],
@@ -253,7 +279,7 @@ export const projects: Project[] = [
       "Identidade, produto, notação musical e desenvolvimento full-stack",
       "Identity, product, musical notation and full-stack development",
     ],
-    cover: "cadencia-student",
+    cover: "cadencia-study-new",
     color: "#c3e6f4",
     ink: "#153ba0",
     concept: true,
@@ -277,18 +303,18 @@ export const projects: Project[] = [
     demo: "music",
     images: [
       {
-        src: "cadencia-home",
+        src: "cadencia-study-new",
         caption: [
-          "O primeiro encontro com a escola.",
-          "The first encounter with the school.",
+          "A partitura ocupa a entrada. Andamento, trecho e escuta permanecem juntos.",
+          "The score leads the entry. Tempo, loop and listening remain together.",
         ],
         layout: "wide",
       },
       {
-        src: "cadencia-student",
+        src: "cadencia-teacher-new",
         caption: [
-          "O ambiente da aluna organiza a prática da semana.",
-          "The student space organises the week’s practice.",
+          "A professora escuta, marca o instante e publica o próximo passo no mesmo contexto.",
+          "The teacher listens, marks a moment and publishes the next step in context.",
         ],
         layout: "wide",
       },
@@ -304,6 +330,7 @@ export const projects: Project[] = [
   },
   {
     slug: "forno-da-lia",
+    composition: "craft",
     name: "Forno da Lia",
     category: ["brand"],
     type: ["Identidade · Embalagem", "Identity · Packaging"],
@@ -377,6 +404,7 @@ export const projects: Project[] = [
   },
   {
     slug: "avesso",
+    composition: "commerce",
     name: "AVESSO",
     category: ["brand", "web"],
     type: ["Direção de arte · E-commerce", "Art direction · E-commerce"],
@@ -390,8 +418,8 @@ export const projects: Project[] = [
       "Brand, campaign, art direction and development",
     ],
     cover: "avesso-campaign",
-    color: "#d9b9a5",
-    ink: "#443022",
+    color: "#dce8ed",
+    ink: "#30111b",
     concept: true,
     status: [
       "E-commerce conceitual · checkout simulado",
@@ -436,6 +464,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nitida",
+    composition: "editorial",
     name: "NÍTIDA",
     category: ["brand", "web"],
     type: ["Identidade · Site de serviços", "Identity · Service website"],

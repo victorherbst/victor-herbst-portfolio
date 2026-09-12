@@ -126,5 +126,49 @@
   "nitida-eye": {
     "width": 1536,
     "height": 1024
+  },
+  "cadencia-study-new": {
+    "width": 1425,
+    "height": 1039
+  },
+  "cadencia-teacher-new": {
+    "width": 1425,
+    "height": 1039
+  },
+  "cadencia-mobile-new": {
+    "width": 375,
+    "height": 812
+  },
+  "oficio-operation-new": {
+    "width": 1425,
+    "height": 1039
+  },
+  "oficio-client-new": {
+    "width": 1425,
+    "height": 1039
+  },
+  "oficio-client-mobile-new": {
+    "width": 375,
+    "height": 812
+  },
+  "rasante-home": {
+    "width": 1425,
+    "height": 1039
+  },
+  "rasante-program": {
+    "width": 1425,
+    "height": 1039
+  },
+  "rasante-detail": {
+    "width": 1425,
+    "height": 1039
+  },
+  "rasante-route": {
+    "width": 1425,
+    "height": 1039
+  },
+  "rasante-mobile": {
+    "width": 375,
+    "height": 812
   }
 }

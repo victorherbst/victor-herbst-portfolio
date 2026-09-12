@@ -5,12 +5,16 @@ import { Category, projects, text } from "@/lib/projects";
 import { Lang, paths, tr } from "@/lib/site";
 import ProjectArt from "./ProjectArt";
 import { Arrow } from "./Chrome";
+import {ReferenceButton,ReferenceSelection} from "./ReferencePicker";
 export default function WorkIndex({ lang }: { lang: Lang }) {
   const [filter, setFilter] = useState<Category>("all");
+  const [composition,setComposition]=useState("all");
+  const directions=[["all","Todas as composições","All compositions"],["graphic","Gráfica & cultural","Graphic & cultural"],["workbench","Bancada & estudo","Workbench & learning"],["operations","Operação & documentos","Operations & documents"],["editorial","Editorial & fotografia","Editorial & photography"],["craft","Marca & embalagem","Brand & packaging"],["commerce","Catálogo & compra","Catalogue & shopping"]];
   const [query, setQuery] = useState("");
   const list = projects.filter(
     (p) =>
       (filter === "all" || p.category.includes(filter)) &&
+      (composition === "all" || p.composition===composition) &&
       `${p.name} ${text(p.type, lang)}`
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
@@ -93,6 +97,8 @@ export default function WorkIndex({ lang }: { lang: Lang }) {
           </svg>
         </label>
       </div>
+      <div className="composition-filter"><label htmlFor="composition">{tr(lang,"Explore também pela composição","Also explore by composition")}</label><select id="composition" value={composition} onChange={e=>setComposition(e.target.value)}>{directions.map(([id,pt,en])=><option key={id} value={id}>{tr(lang,pt,en)}</option>)}</select><p>{tr(lang,"Guarde até três referências e escolha o que mais combina com sua ideia.","Save up to three references and choose what best fits your idea.")}</p></div>
+      <ReferenceSelection lang={lang} compact/>
       <p className="work-count" role="status">
         {list.length}{" "}
         {tr(
@@ -128,6 +134,7 @@ export default function WorkIndex({ lang }: { lang: Lang }) {
                 </div>
                 <span className="project-number">↗</span>
               </div>
+              <ReferenceButton slug={project.slug} lang={lang}/>
               <p className="project-status">{text(project.status, lang)}</p>
             </article>
           ))}
@@ -137,8 +144,8 @@ export default function WorkIndex({ lang }: { lang: Lang }) {
           <h2>
             {tr(
               lang,
-              "Ainda não há um projeto com esse nome.",
-              "No project by that name yet.",
+              "Nenhum projeto nessa combinação.",
+              "No projects match this combination.",
             )}
           </h2>
           <p>
@@ -152,6 +159,7 @@ export default function WorkIndex({ lang }: { lang: Lang }) {
             className="button primary"
             onClick={() => {
               setFilter("all");
+              setComposition("all");
               setQuery("");
             }}
           >
