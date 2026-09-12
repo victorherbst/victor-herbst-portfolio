@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Project, projects, text } from "@/lib/projects";
 import { Lang, paths, tr } from "@/lib/site";
 import { WorkImage } from "./ProjectArt";
@@ -30,7 +31,7 @@ export default function CasePage({
             · 2026
           </span>
         </div>
-        <h1>{p.name}</h1>
+        <h1>{p.slug === "maia-ventura" ? <Image className="case-wordmark maia-wordmark" src="/brand/maia.svg" width={1200} height={250} alt={p.name} priority/> : p.slug === "forno-da-lia" ? <Image className="case-wordmark lia-wordmark" src="/brand/lia.svg" width={640} height={415} alt={p.name} priority/> : p.name}</h1>
         <div className="case-lede">
           <h2>{text(p.headline, lang)}</h2>
           <p>{text(p.intro, lang)}</p>

@@ -9,7 +9,7 @@ import {ReferenceButton,ReferenceSelection} from "./ReferencePicker";
 export default function WorkIndex({ lang }: { lang: Lang }) {
   const [filter, setFilter] = useState<Category>("all");
   const [composition,setComposition]=useState("all");
-  const directions=[["all","Todas as composições","All compositions"],["graphic","Gráfica & cultural","Graphic & cultural"],["workbench","Bancada & estudo","Workbench & learning"],["operations","Operação & documentos","Operations & documents"],["editorial","Editorial & fotografia","Editorial & photography"],["craft","Marca & embalagem","Brand & packaging"],["commerce","Catálogo & compra","Catalogue & shopping"]];
+  const directions=[["all","Todas as composições","All compositions"],["graphic","Gráfica & cultural","Graphic & cultural"],["workbench","Bancada & estudo","Workbench & learning"],["operations","Operação & documentos","Operations & documents"],["editorial","Editorial & fotografia","Editorial & photography"],["craft","Marca & embalagem","Brand & packaging"],["commerce","Catálogo & compra","Catalogue & shopping"],["object","Objeto & detalhe","Object & detail"]];
   const [query, setQuery] = useState("");
   const list = projects.filter(
     (p) =>

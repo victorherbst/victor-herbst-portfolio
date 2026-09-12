@@ -170,5 +170,41 @@
   "rasante-mobile": {
     "width": 375,
     "height": 812
+  },
+  "vinco-object": {
+    "width": 1425,
+    "height": 990
+  },
+  "vinco-detail": {
+    "width": 1425,
+    "height": 990
+  },
+  "vinco-continuity": {
+    "width": 1425,
+    "height": 990
+  },
+  "vinco-mobile": {
+    "width": 375,
+    "height": 812
+  },
+  "vinco-cart": {
+    "width": 1425,
+    "height": 990
+  },
+  "avesso-catalog-new": {
+    "width": 1425,
+    "height": 990
+  },
+  "avesso-product-new": {
+    "width": 1425,
+    "height": 990
+  },
+  "avesso-mobile-new": {
+    "width": 375,
+    "height": 812
+  },
+  "avesso-checkout-new": {
+    "width": 1425,
+    "height": 990
   }
 }

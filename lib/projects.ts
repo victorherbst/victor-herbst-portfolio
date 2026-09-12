@@ -3,7 +3,7 @@ export type Category = "all" | "brand" | "web" | "product";
 type Text = [string, string];
 export type Project = {
   slug: string;
-  composition: "editorial" | "graphic" | "workbench" | "operations" | "craft" | "commerce";
+  composition: "editorial" | "graphic" | "workbench" | "operations" | "craft" | "commerce" | "object";
   name: string;
   category: Category[];
   type: Text;
@@ -26,6 +26,26 @@ export type Project = {
 };
 export const text = (copy: Text, lang: Lang) => copy[lang === "pt" ? 0 : 1];
 export const projects: Project[] = [
+  {
+    slug: "vinco", name: "VINCO", composition: "object", category: ["brand", "web"],
+    type: ["Joalheria · Identidade · E-commerce", "Jewellery · Identity · E-commerce"],
+    headline: ["Uma dobra. Toda uma linguagem.", "One fold. An entire language."],
+    intro: ["O desenho das joias, a identidade e a loja partem do mesmo gesto. A peça ocupa a tela; a campanha mostra como ela encontra o corpo.", "Jewellery, identity and store grow from the same gesture. The piece fills the screen; the campaign shows how it meets the body."],
+    role: ["Conceito, desenho de coleção, identidade, campanha e desenvolvimento", "Concept, collection design, identity, campaign and development"],
+    cover: "vinco-object", color: "#dae5de", ink: "#103e43", concept: true,
+    status: ["Loja conceitual · exploração de produto · checkout simulado", "Concept store · product exploration · simulated checkout"],
+    challenge: ["Apresentar uma joia exige explicar forma, acabamento e proporção. A campanha também precisava manter Maia Ventura reconhecível em uma marca diferente do seu projeto original.", "Presenting jewellery requires communicating form, finish and proportion. The campaign also needed to keep Maia Ventura recognisable in a brand distinct from her original project."],
+    decision: ["Uma abertura de catálogo de objetos permite alternar peça, detalhe e corpo. Letras geométricas e legendas contidas deixam a matéria conduzir. Retrato original e campanha ficam lado a lado para tornar a continuidade de Maia visível.", "An object-catalogue opening alternates piece, detail and body. Geometric type and restrained captions let the material lead. Original portrait and campaign sit side by side to make Maia’s continuity visible."],
+    result: ["Oito joias, variações de acabamento, guia de medidas, filtros, estados de indisponibilidade, sacola persistente e compra demonstrativa. Maia Ventura e Nara Azevedo compõem a campanha com peças coerentes entre os enquadramentos.", "Eight pieces, finish variants, a sizing guide, filters, unavailable states, a persistent bag and demonstration purchase. Maia Ventura and Nara Azevedo feature in a campaign with consistent jewellery across views."],
+    tags: ["Identidade", "Joalheria", "Campanha", "E-commerce"],
+    images: [
+      {src:"vinco-object",caption:["A joia abre a experiência. Três vistas aproximam forma, detalhe e corpo.","The jewellery opens the experience. Three views bring together form, detail and body."],layout:"wide"},
+      {src:"vinco-detail",caption:["Medida, acabamento e disponibilidade acompanham a escolha.","Size, finish and availability accompany the choice."],layout:"wide"},
+      {src:"vinco-continuity",caption:["Maia Ventura: retrato original e nova campanha. O mesmo rosto em universos diferentes.","Maia Ventura: original portrait and new campaign. The same face across different worlds."],layout:"wide"},
+      {src:"vinco-mobile",caption:["A exploração da joia continua por toque, com acesso direto à compra.","Jewellery exploration continues by touch, with direct access to purchase."],layout:"portrait"},
+      {src:"vinco-cart",caption:["Uma revisão de compra legível, com valores e condições demonstrativos.","A readable purchase review, with demonstration prices and conditions."],layout:"wide"}
+    ]
+  },
   {
     slug: "rasante", name: "RASANTE", composition: "graphic", category: ["brand", "web"],
     type: ["Identidade cultural · Programação", "Cultural identity · Programme"],
@@ -417,7 +437,7 @@ export const projects: Project[] = [
       "Marca, campanha, direção de arte e desenvolvimento",
       "Brand, campaign, art direction and development",
     ],
-    cover: "avesso-campaign",
+    cover: "avesso-catalog-new",
     color: "#dce8ed",
     ink: "#30111b",
     concept: true,
@@ -430,8 +450,8 @@ export const projects: Project[] = [
       "Balance an expressive campaign with the clarity people need to choose a size, compare garments and shop.",
     ],
     decision: [
-      "Composições assimétricas abrem a coleção; controles de categoria, tamanho e ordenação tornam a exploração objetiva. Campanha e produto mantêm as mesmas peças.",
-      "Asymmetric compositions introduce the collection; category, size and sorting controls make browsing useful. Campaign and product views keep the same garments.",
+      "Tipografia de traços pesados abre a campanha. O catálogo deixa preços e tamanhos próximos das peças; a escolha de tamanho segue para a página de produto e permanece no endereço. Campanha e produto mantêm os mesmos desenhos.",
+      "Heavy display lettering opens the campaign. The catalogue keeps prices and sizes close to garments; size choices carry into product pages and remain in the URL. Campaign and product views keep the same designs.",
     ],
     result: [
       "Quatro peças, páginas de produto, guia de tamanhos, estados de indisponibilidade, sacola persistente e finalização simulada.",
@@ -445,7 +465,7 @@ export const projects: Project[] = [
         layout: "wide",
       },
       {
-        src: "avesso-home",
+        src: "avesso-catalog-new",
         caption: [
           "Vitrine editorial e navegação por produto.",
           "An editorial storefront with product-led navigation.",
@@ -453,13 +473,15 @@ export const projects: Project[] = [
         layout: "wide",
       },
       {
-        src: "avesso-product",
+        src: "avesso-product-new",
         caption: [
           "Imagem, detalhes e escolha de tamanho no mesmo fluxo.",
           "Image, details and size selection in the same flow.",
         ],
         layout: "wide",
       },
+      {src:"avesso-mobile-new",caption:["Um catálogo que continua legível no celular, com tamanhos junto às peças.","A catalogue that stays readable on mobile, with sizes beside each garment."],layout:"portrait"},
+      {src:"avesso-checkout-new",caption:["Resumo, frete e total explícitos antes da conclusão demonstrativa.","Summary, shipping and total are explicit before the demonstration confirmation."],layout:"wide"},
     ],
   },
   {
