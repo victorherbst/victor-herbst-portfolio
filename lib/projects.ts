@@ -3,7 +3,7 @@ export type Category = "all" | "brand" | "web" | "product";
 type Text = [string, string];
 export type Project = {
   slug: string;
-  composition: "editorial" | "graphic" | "workbench" | "operations" | "craft" | "commerce" | "object";
+  composition: "editorial" | "graphic" | "workbench" | "operations" | "craft" | "commerce" | "object" | "archive";
   name: string;
   category: Category[];
   type: Text;
@@ -26,6 +26,27 @@ export type Project = {
 };
 export const text = (copy: Text, lang: Lang) => copy[lang === "pt" ? 0 : 1];
 export const projects: Project[] = [
+  {
+    slug: "verbete", name: "VERBETE", composition: "archive", category: ["brand", "web", "product"],
+    type: ["Arquivo cultural · Pesquisa · Leitura", "Cultural archive · Search · Reading"],
+    headline: ["Uma imagem leva a outra.", "One image leads to another."],
+    intro: ["Um acervo para pesquisar, observar e reunir referências. A interface deixa as obras em primeiro plano e mantém autoria, contexto e procedência por perto.", "An archive for searching, observing and gathering references. The interface foregrounds the works while keeping authorship, context and provenance close at hand."],
+    role: ["Identidade, curadoria, arquitetura de informação, UX/UI e desenvolvimento", "Identity, curation, information architecture, UX/UI and development"],
+    cover: "verbete-acervo", color: "#edf0e7", ink: "#293f32", concept: true,
+    status: ["Arquivo conceitual · obras com fontes · coleções locais", "Concept archive · sourced artworks · local collections"],
+    challenge: ["Uma coleção de imagens só se torna um arquivo útil quando é possível encontrar, entender e voltar ao que interessa. O projeto precisava acolher a descoberta livre e a pesquisa com intenção.", "An image collection becomes a useful archive when people can find, understand and return to what matters. The project needed to welcome both open discovery and intentional research."],
+    decision: ["A busca abre a experiência. Assuntos e tipos de obra organizam o acervo; fichas preservam a procedência; percursos propõem relações visuais. Literata dá ritmo à leitura, e Atkinson Hyperlegible Next mantém os controles abertos e claros. A marca usa a linguagem de uma entrada de dicionário: verbete seguido de dois-pontos.", "Search opens the experience. Subjects and artwork types organise the archive; records preserve provenance; reading paths propose visual relationships. Literata gives reading its rhythm, while Atkinson Hyperlegible Next keeps controls open and clear. The identity follows the language of a dictionary entry: verbete followed by a colon."],
+    result: ["Doze obras em domínio público, busca com filtros combináveis, grade e lista, ampliação de imagens, três percursos editoriais e coleções persistentes no navegador. As referências podem ser organizadas e exportadas em CSV, com autoria, fonte e direitos.", "Twelve public-domain works, search with combined filters, grid and list views, image enlargement, three editorial paths and persistent browser collections. References can be organised and exported as CSV, including authorship, source and rights."],
+    tags: ["Identidade", "Acervo", "Arquitetura de informação", "Next.js"],
+    images: [
+      {src:"verbete-acervo",caption:["Um índice visual: a busca, os assuntos e as obras dividem a mesma superfície.","A visual index: search, subjects and works share the same surface."],layout:"wide"},
+      {src:"verbete-pesquisa",caption:["A vista em lista aproxima título, autoria e data. Os filtros permanecem visíveis.","List view brings title, authorship and date together. Filters stay visible."],layout:"wide"},
+      {src:"verbete-ficha",caption:["Cada imagem abre uma ficha com técnica, dimensões, crédito e acesso à fonte.","Each image opens a record with medium, dimensions, credit and access to its source."],layout:"wide"},
+      {src:"verbete-percurso",caption:["Percursos de leitura aproximam as obras por perguntas de observação.","Reading paths bring works together through questions of observation."],layout:"wide"},
+      {src:"verbete-caderno",caption:["Coleções pessoais ficam salvas no navegador. A exportação leva as referências para fora do site.","Personal collections stay in the browser. Exporting takes the references beyond the website."],layout:"wide"},
+      {src:"verbete-mobile",caption:["O acervo se reorganiza para o celular, com os mesmos caminhos de pesquisa e leitura.","The archive adapts to mobile, with the same search and reading paths."],layout:"portrait"}
+    ]
+  },
   {
     slug: "vinco", name: "VINCO", composition: "object", category: ["brand", "web"],
     type: ["Joalheria · Identidade · E-commerce", "Jewellery · Identity · E-commerce"],

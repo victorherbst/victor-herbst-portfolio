@@ -206,5 +206,29 @@
   "avesso-checkout-new": {
     "width": 1425,
     "height": 990
+  },
+  "verbete-acervo": {
+    "width": 1425,
+    "height": 990
+  },
+  "verbete-pesquisa": {
+    "width": 1425,
+    "height": 990
+  },
+  "verbete-ficha": {
+    "width": 1425,
+    "height": 990
+  },
+  "verbete-percurso": {
+    "width": 1425,
+    "height": 990
+  },
+  "verbete-caderno": {
+    "width": 1425,
+    "height": 990
+  },
+  "verbete-mobile": {
+    "width": 375,
+    "height": 865
   }
 }

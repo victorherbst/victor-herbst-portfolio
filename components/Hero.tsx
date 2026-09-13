@@ -7,7 +7,7 @@ import ProjectArt from "./ProjectArt";
 import { Arrow } from "./Chrome";
 export default function Hero({ lang }: { lang: Lang }) {
   const [active, setActive] = useState(0);
-  const slides = [projects[0], projects[4], projects[3]];
+  const slides = ["vinco", "verbete", "ceu-canto"].map(slug => projects.find(p => p.slug === slug)!);
   const project = slides[active];
   const p = paths(lang);
   return (

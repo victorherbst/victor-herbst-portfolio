@@ -31,7 +31,7 @@ export default function CasePage({
             · 2026
           </span>
         </div>
-        <h1>{p.slug === "maia-ventura" ? <Image className="case-wordmark maia-wordmark" src="/brand/maia.svg" width={1200} height={250} alt={p.name} priority/> : p.slug === "forno-da-lia" ? <Image className="case-wordmark lia-wordmark" src="/brand/lia.svg" width={640} height={415} alt={p.name} priority/> : p.name}</h1>
+        <h1>{p.slug === "verbete" ? <Image className="case-wordmark verbete-wordmark" src="/brand/verbete.svg" width={565} height={154} alt={p.name} priority/> : p.slug === "maia-ventura" ? <Image className="case-wordmark maia-wordmark" src="/brand/maia.svg" width={1200} height={250} alt={p.name} priority/> : p.slug === "forno-da-lia" ? <Image className="case-wordmark lia-wordmark" src="/brand/lia.svg" width={640} height={415} alt={p.name} priority/> : p.name}</h1>
         <div className="case-lede">
           <h2>{text(p.headline, lang)}</h2>
           <p>{text(p.intro, lang)}</p>
@@ -141,10 +141,10 @@ export default function CasePage({
         ))}
       </section>
       <div className="case-footnote shell">
-        {p.concept&&<details><summary>{tr(lang,"Créditos de imagem","Image credits")}</summary><p>{tr(lang,"Fotografias conceituais geradas por IA, com direção e revisão de Victor Herbst. As telas mostram o projeto implementado.","Concept photography generated with AI, directed and reviewed by Victor Herbst. Screens show the implemented project.")}</p></details>}
+        {p.concept&&<details><summary>{tr(lang,"Créditos de imagem","Image credits")}</summary><p>{p.slug === "verbete" ? tr(lang,"Obras do acervo do The Metropolitan Museum of Art, disponibilizadas em domínio público pelo programa Open Access (CC0). Autoria, fonte e créditos estão preservados nas fichas. Seleção independente, sem vínculo institucional com o museu.","Works from The Metropolitan Museum of Art, made available in the public domain through Open Access (CC0). Authorship, sources and credits are preserved in each record. Independent selection, with no institutional affiliation.") : tr(lang,"Fotografias conceituais geradas por IA, com direção e revisão de Victor Herbst. As telas mostram o projeto implementado.","Concept photography generated with AI, directed and reviewed by Victor Herbst. Screens show the implemented project.")}</p></details>}
         <p>
           {p.concept
-            ? tr(
+            ? p.slug === "verbete" ? tr(lang, "Arquivo conceitual criado para portfólio. As obras são reais; a identidade, a seleção e a experiência digital foram desenvolvidas para este case.", "Concept archive created for the portfolio. The artworks are real; the identity, selection and digital experience were developed for this case.") : tr(
                 lang,
                 "Projeto fictício criado para portfólio. Marcas, pessoas e operações retratadas são conceituais. Imagens ilustrativas.",
                 "Fictional portfolio project. Depicted brands, people and operations are concepts. Illustrative imagery.",

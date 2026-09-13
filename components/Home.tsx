@@ -44,7 +44,7 @@ export default function Home({ lang }: { lang: Lang }) {
           </div>
         </div>
         <div className="selected-grid">
-          {["rasante","cadencia","forno-da-lia","oficio","maia-ventura","ceu-canto"].map(slug=>projects.find(p=>p.slug===slug)!).map(
+          {["rasante","cadencia","forno-da-lia","oficio","verbete","maia-ventura"].map(slug=>projects.find(p=>p.slug===slug)!).map(
             (project, i) => (
               <article
                 className={`project-tile tile-${i}`}
