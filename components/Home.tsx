@@ -2,7 +2,8 @@ import Link from "next/link";
 import { projects, text } from "@/lib/projects";
 import { Lang, paths, tr } from "@/lib/site";
 import Hero from "./Hero";
-import ProjectArt, { WorkImage } from "./ProjectArt";
+import ProjectArt from "./ProjectArt";
+import Portrait from "./Portrait";
 import { Arrow } from "./Chrome";
 import Experience from "./Experience";
 import Contact from "./Contact";
@@ -165,26 +166,23 @@ export default function Home({ lang }: { lang: Lang }) {
           ))}
         </div>
       </section>
-      <section className="about-strip shell" data-reveal>
-        <div className="about-photo">
-          <WorkImage
-            name="victor"
-            alt={tr(
-              lang,
-              "Retrato de Victor Herbst",
-              "Portrait of Victor Herbst",
-            )}
-            sizes="(max-width: 760px) 80vw, 25vw"
-          />
-          <span>
-            Victor, {tr(lang, "por trás das telas.", "behind the screens.")}
-          </span>
-        </div>
+      <section
+        className="about-strip shell"
+        id="sobre"
+        aria-labelledby="about-preview-heading"
+        data-reveal
+      >
+        <Portrait
+          lang={lang}
+          tone="mono"
+          className="about-photo"
+          sizes="(max-width: 760px) calc(100vw - 60px), (max-width: 1120px) 40vw, 440px"
+        />
         <div className="about-copy">
           <p className="eyebrow">
             04 / {tr(lang, "Prazer, Victor", "Hi, I’m Victor")}
           </p>
-          <h2>
+          <h2 id="about-preview-heading">
             {tr(lang, "Curiosidade é", "Curiosity is")}
             <br />
             <span className="serif-em">

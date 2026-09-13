@@ -28,7 +28,7 @@ const schema = {
   "@type": "Person",
   name: "Victor Herbst",
   url: "https://victorherbst.com.br",
-  image: "https://victorherbst.com.br/work/victor.webp",
+  image: "https://victorherbst.com.br/work/victor-editorial-cor.webp",
   sameAs: [
     "https://www.linkedin.com/in/victor-herbst-772362248/",
     "https://www.99freelas.com.br/user/victor-herbst",

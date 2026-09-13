@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Lang, paths, tr, contacts } from "@/lib/site";
-import { WorkImage } from "./ProjectArt";
+import Portrait from "./Portrait";
 import { Arrow } from "./Chrome";
 export default function About({ lang }: { lang: Lang }) {
   return (
@@ -18,21 +18,13 @@ export default function About({ lang }: { lang: Lang }) {
         </h1>
       </header>
       <section className="about-intro">
-        <div className="about-portrait">
-          <WorkImage
-            name="victor"
-            priority
-            alt={tr(
-              lang,
-              "Retrato de Victor Herbst",
-              "Portrait of Victor Herbst",
-            )}
-            sizes="(max-width:760px) 90vw, 35vw"
-          />
-          <span>
-            {tr(lang, "Brasil · Trabalho remoto", "Brazil · Working remotely")}
-          </span>
-        </div>
+        <Portrait
+          lang={lang}
+          tone="color"
+          className="about-portrait"
+          priority
+          sizes="(max-width: 760px) calc(100vw - 60px), (max-width: 1120px) 40vw, 500px"
+        />
         <div>
           <h2>
             {tr(
