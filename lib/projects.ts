@@ -1,5 +1,5 @@
 import type { Lang } from "./site";
-export type Category = "all" | "brand" | "web" | "product";
+export type Category = "all" | "brand" | "web" | "product" | "game";
 type Text = [string, string];
 export type Project = {
   slug: string;
@@ -13,6 +13,10 @@ export type Project = {
   color: string;
   ink: string;
   concept: boolean;
+  /** Replaces the "concept / independent product" label in the case header. */
+  kind?: Text;
+  /** Replaces the default case footnote. */
+  note?: Text;
   status: Text;
   challenge: Text;
   decision: Text;
@@ -297,6 +301,76 @@ export const projects: Project[] = [
         caption: [
           "A gestão tem linguagem própria, sem perder a identidade.",
           "Management has its own language without losing the identity.",
+        ],
+        layout: "wide",
+      },
+    ],
+  },
+  {
+    slug: "bots-dreams",
+    name: "BOTS Dreams",
+    category: ["game"],
+    type: ["Jogo · Remake em Godot", "Game · Godot remake"],
+    headline: [
+      "Um clássico online, refeito do código à interface.",
+      "An online classic, rebuilt from code to interface.",
+    ],
+    intro: [
+      "BOTS foi um jogo de ação online dos anos 2000. BOTS Dreams é a minha versão dele em Godot 4: combate, classes, progressão e uma interface inteiramente nova, jogável no Windows e no Mac.",
+      "BOTS was a 2000s online action game. BOTS Dreams is my own version of it in Godot 4: combat, classes, progression and an entirely new interface, playable on Windows and Mac.",
+    ],
+    role: [
+      "Direção de produto, design de jogo e de interface. Desenvolvimento conduzido com agentes de IA (Claude no Windows e Codex no Mac), com revisão e testes a cada entrega.",
+      "Product direction, game and interface design. Development carried out with AI agents (Claude on Windows and Codex on Mac), with review and testing at every delivery.",
+    ],
+    cover: "bots-lobby",
+    color: "#d6d9f5",
+    ink: "#20244a",
+    concept: false,
+    kind: ["Projeto pessoal", "Personal project"],
+    note: [
+      "Projeto pessoal, sem fins comerciais e sem distribuição. BOTS e seus modelos, mapas e nomes pertencem aos detentores dos direitos; a interface, os sistemas e o código são novos. As imagens mostram só telas de interface.",
+      "Personal, non-commercial project, not distributed. BOTS and its models, maps and names belong to their rights holders; the interface, systems and code are new. Images show interface screens only.",
+    ],
+    status: [
+      "Em desenvolvimento · versão 0.30, para uso pessoal",
+      "In development · version 0.30, for personal use",
+    ],
+    challenge: [
+      "O cliente original já não funciona bem, e os modelos e mapas estão em formatos antigos. Como voltar a jogar e criar uma versão própria sem perder a sensação do combate?",
+      "The original client no longer runs well, and its models and maps sit in legacy formats. How do you play again and build your own version without losing the feel of the combat?",
+    ],
+    decision: [
+      "Recriar tudo em Godot 4: importadores para os modelos e mapas, o combo de quatro golpes e as transformações, três classes com kits próprios e uma progressão sem teto. A interface foi redesenhada do zero, com Lobby, Hangar e loja.",
+      "Rebuild everything in Godot 4: importers for the models and maps, the four-hit combo and transformations, three classes with their own kits and uncapped progression. The interface was redesigned from scratch, with a Lobby, Hangar and shop.",
+    ],
+    result: [
+      "Três classes, 24 famílias de skills, transformações, mapas importados e uma progressão em etapas: renascimentos, Pressão, cristais, forja, metas e coleções. Cada entrega passa por mais de 100 suítes de teste e por jornadas com entradas reais no executável; dois agentes de IA trabalham em máquinas diferentes, coordenados por reservas de arquivos.",
+      "Three classes, 24 skill families, transformations, imported maps and a staged progression: rebirths, Pressure, crystals, forge, goals and collections. Every delivery runs through more than 100 test suites and journeys with real inputs on the executable; two AI agents work on different machines, coordinated through file reservations.",
+    ],
+    tags: ["Godot 4", "GDScript", "Game design", "UI", "Agentes de IA"],
+    images: [
+      {
+        src: "bots-lobby",
+        caption: [
+          "O Lobby: o próximo passo, as metas e o bot em destaque.",
+          "The Lobby: the next step, the goals and the bot in focus.",
+        ],
+        layout: "wide",
+      },
+      {
+        src: "bots-hangar",
+        caption: [
+          "Hangar › Metas e coleção: livros, contratos, bestiário e formas.",
+          "Hangar › Goals and collection: books, contracts, bestiary and forms.",
+        ],
+        layout: "wide",
+      },
+      {
+        src: "bots-result",
+        caption: [
+          "O fim da missão reúne recompensas, contratos e as próximas metas.",
+          "The end of a mission gathers rewards, contracts and the next goals.",
         ],
         layout: "wide",
       },

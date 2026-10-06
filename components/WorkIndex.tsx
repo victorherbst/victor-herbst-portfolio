@@ -28,6 +28,7 @@ export default function WorkIndex({ lang }: { lang: Lang }) {
     ["brand", tr(lang, "Identidade", "Identity")],
     ["web", tr(lang, "Web & lojas", "Web & stores")],
     ["product", tr(lang, "Plataformas", "Platforms")],
+    ["game", tr(lang, "Jogos", "Games")],
   ];
   return (
     <main id="main" className="work-index shell">

@@ -126,5 +126,17 @@
   "nitida-eye": {
     "width": 1536,
     "height": 1024
+  },
+  "bots-lobby": {
+    "width": 1600,
+    "height": 900
+  },
+  "bots-hangar": {
+    "width": 1600,
+    "height": 900
+  },
+  "bots-result": {
+    "width": 1600,
+    "height": 900
   }
 }

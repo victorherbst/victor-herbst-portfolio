@@ -23,9 +23,11 @@ export default function CasePage({
         <div className="case-top">
           <p className="eyebrow">{text(p.type, lang)}</p>
           <span className="case-kind">
-            {p.concept
-              ? tr(lang, "Conceito de portfólio", "Portfolio concept")
-              : tr(lang, "Produto autoral", "Independent product")}{" "}
+            {p.kind
+              ? text(p.kind, lang)
+              : p.concept
+                ? tr(lang, "Conceito de portfólio", "Portfolio concept")
+                : tr(lang, "Produto autoral", "Independent product")}{" "}
             · 2026
           </span>
         </div>
@@ -139,17 +141,19 @@ export default function CasePage({
       </section>
       <div className="case-footnote shell">
         <p>
-          {p.concept
-            ? tr(
-                lang,
-                "Projeto fictício criado para portfólio. Marcas, pessoas e operações retratadas são conceituais. Imagens geradas com IA sob direção de arte autoral.",
-                "Fictional portfolio project. Depicted brands, people and operations are concepts. AI-generated images under original art direction.",
-              )
-            : tr(
-                lang,
-                "Produto autoral. As imagens e o texto identificam o que está publicado e o que pertence ao protótipo.",
-                "Independent product. Images and text distinguish published work from the prototype.",
-              )}{" "}
+          {p.note
+            ? text(p.note, lang)
+            : p.concept
+              ? tr(
+                  lang,
+                  "Projeto fictício criado para portfólio. Marcas, pessoas e operações retratadas são conceituais. Imagens geradas com IA sob direção de arte autoral.",
+                  "Fictional portfolio project. Depicted brands, people and operations are concepts. AI-generated images under original art direction.",
+                )
+              : tr(
+                  lang,
+                  "Produto autoral. As imagens e o texto identificam o que está publicado e o que pertence ao protótipo.",
+                  "Independent product. Images and text distinguish published work from the prototype.",
+                )}{" "}
           {p.slug === "cadencia"
             ? tr(
                 lang,

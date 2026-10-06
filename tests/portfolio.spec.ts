@@ -5,6 +5,7 @@ const slugList = [
   "ceu-canto",
   "oficio",
   "cadencia",
+  "bots-dreams",
   "forno-da-lia",
   "avesso",
   "nitida",
@@ -139,7 +140,7 @@ test("project index: filters, search, empty state and every case", async ({
   page,
 }) => {
   await page.goto("/projetos");
-  await expect(page.locator(".work-grid article")).toHaveCount(7);
+  await expect(page.locator(".work-grid article")).toHaveCount(8);
   await page
     .getByRole("button", { name: "Plataformas 3", exact: true })
     .click();
@@ -151,7 +152,7 @@ test("project index: filters, search, empty state and every case", async ({
     page.getByText("Ainda não há um projeto com esse nome."),
   ).toBeVisible();
   await page.getByRole("button", { name: "Limpar filtros" }).click();
-  await expect(page.locator(".work-grid article")).toHaveCount(7);
+  await expect(page.locator(".work-grid article")).toHaveCount(8);
   await page
     .getByRole("searchbox", { name: "Buscar projeto" })
     .fill("cadencia");
@@ -292,7 +293,7 @@ test("responsive, keyboard, reduced motion and accessibility", async ({
     if (width === 390) {
       await page.getByRole("button", { name: "Abrir menu" }).click();
       await expect(
-        page.getByRole("link", { name: "Projetos07", exact: true }),
+        page.getByRole("link", { name: "Projetos08", exact: true }),
       ).toBeVisible();
       await page.keyboard.press("Escape");
       await expect(
