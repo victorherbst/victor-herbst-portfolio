@@ -39,7 +39,9 @@ export default function ProjectArt({
   priority?: boolean;
 }) {
   const p = project;
-  const screen = ["oficio", "cadencia", "ceu-canto"].includes(p.slug);
+  const screen = ["oficio", "cadencia", "ceu-canto", "bots-dreams"].includes(
+    p.slug,
+  );
   return (
     <div
       className={`project-art art-${p.slug} ${screen ? "screen-art" : ""}`}
@@ -71,6 +73,12 @@ export default function ProjectArt({
         <span className="art-label" aria-hidden="true">
           <Image src="/brand/oficio.svg" width={540} height={190} alt="" />
           <span>CADA ETAPA, NO SEU LUGAR.</span>
+        </span>
+      )}
+      {p.slug === "bots-dreams" && (
+        <span className="art-label" aria-hidden="true">
+          BOTS DREAMS
+          <span>GODOT 4 · REMAKE</span>
         </span>
       )}
       {p.slug === "avesso" && (

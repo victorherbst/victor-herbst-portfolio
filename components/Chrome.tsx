@@ -83,7 +83,7 @@ export function Header({ lang }: { lang: Lang }) {
             aria-current={route.startsWith(p.work) ? "page" : undefined}
           >
             {tr(lang, "Projetos", "Work")}
-            <span>07</span>
+            <span>08</span>
           </Link>
           <Link onClick={() => setOpen(false)} href={`${p.home}#experiencias`}>
             {tr(lang, "Experimente", "Try it")}

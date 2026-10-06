@@ -38,8 +38,8 @@ export default function Home({ lang }: { lang: Lang }) {
               )}
             </p>
             <Link href={p.work} className="text-link">
-              {tr(lang, "Todos os projetos", "All projects")} (07){" "}
-              <Arrow diagonal />
+              {tr(lang, "Todos os projetos", "All projects")} (
+              {String(projects.length).padStart(2, "0")}) <Arrow diagonal />
             </Link>
           </div>
         </div>
